@@ -2,11 +2,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Eamonn Fitzmaurice | Design & Development in NYC </title>
 <meta name="description" content="Resume for Eamonn Fitzmaurice.  Designer and Developer living in New York City.">
-
-
-	<!--Google Fonts-->
+<!--google fonts-->
 <link href="https://fonts.googleapis.com/css2?family=Monda&family=Roboto:wght@900&display=swap" rel="stylesheet">
 
 <style>
@@ -80,6 +79,10 @@
 		column-count: 3;
 		column-gap: 2em;
 	}
+	footer span{
+		color: inherit;
+		margin-right: 5px;
+	}
 	@media only screen and (max-width: 1200px) {
 		body{
 			margin-left: 0px;
@@ -112,11 +115,21 @@
 			column-count: 2;
 		}
 	}
-	@media only screen and (max-width: 500px) {
+	@media only screen and (max-width: 700px) {
+		body{
+			padding: 2.5em;
+		}
+		h1{
+			font-size: 3rem;
+			line-height: 3rem;
+		}
 		.columns{
 			-moz-column-count: 1;
 			-webkit-column-count: 1;
 			column-count: 1;
+		}
+		footer span{
+			display: none;
 		}
 	}
 
@@ -148,7 +161,26 @@
 			</li>	
 		</ul>
 	</section>
-	
+
+	<section id="work">
+		<h3>Work</h3>
+		<ul class="columns">
+			<li><a href="https://bakednyc.com">Baked</a></li>
+			<li><a href="https://brown65.the74million.org">Brown vs. Board</a></li>
+			<li><a href="http://educationdream.com">Education Dream</a></li>
+			<li><a href="https://www.esmailcorp.com">Esmail Corp</a></li>
+			<li><a href="https://www.glenstone.org">Glenstone</a></li>
+			<li><a href="http://www.chpcny.org/makingneighborhoodsregional/">Making Neighborhoods</a></li>
+			<li><a href="https://www.youtube.com/watch?v=oc8N_B0qc8Q">mApp4D</a></li>
+			<li><a href="https://miainsurancegroup.com">Miami Insurance Group</a></li>
+			<li><a href="https://vandam.com/our_work_detail.php?id=20">National Gallery of Art</a></li>
+			<li><a href="http://reinventingschools.the74million.org">Reinventing Americas Schools</a></li>
+			<li><a href="https://www.the74million.org">The 74 Million</a></li>
+			<li><a href="http://topsheet.com">TopSheet</a></li>
+			<li><a href="https://vandam.com">VanDam Maps</a></li>
+		</ul>
+	</section>
+
 	<section>
 		<h3>Tools</h3>
 			<ul class="columns">
@@ -164,24 +196,6 @@
 			</ul>	
 	</section>
 	
-	<section id="work">
-		<h3>Work</h3>
-			<ul class="columns">
-				<li><a href="https://bakednyc.com">Baked</a></li>
-				<li><a href="https://brown65.the74million.org">Brown vs. Board</a></li>
-				<li><a href="http://educationdream.com">Education Dream</a></li>
-				<li><a href="https://www.esmailcorp.com">Esmail Corp</a></li>
-				<li><a href="https://www.glenstone.org">Glenstone</a></li>
-				<li><a href="http://www.chpcny.org/makingneighborhoodsregional/">Making Neighborhoods</a></li>
-				<li><a href="https://www.youtube.com/watch?v=oc8N_B0qc8Q">mApp4D</a></li>
-				<li><a href="https://miainsurancegroup.com">Miami Insurance Group</a></li>
-				<li><a href="https://vandam.com/our_work_detail.php?id=20">National Gallery of Art</a></li>
-				<li><a href="http://reinventingschools.the74million.org">Reinventing Americas Schools</a></li>
-				<li><a href="https://www.the74million.org">The 74 Million</a></li>
-				<li><a href="http://topsheet.com">TopSheet</a></li>
-				<li><a href="https://vandam.com">VanDam Maps</a></li>
-			</ul>	
-	</section>
 
 	<section>
 		<h3>Experiments</h3>
@@ -195,9 +209,9 @@
 	<footer>
 		<h3>Contact Me!</h3>
 		<p>I'm in New York City.</p>
-		<p>e: <a href="mailto:eamonnfitzmaurice@gmail.com">eamonnfitzmaurice@gmail.com</a></p>
-		<p>p: <a href="tel:917-593-7439">917-593-7439</a></p>
-		<p>i: <a href="https://www.instagram.com/easinewe/">@easinewe</a></p>
+		<p><span>e:</span><a href="mailto:eamonnfitzmaurice@gmail.com">eamonnfitzmaurice@gmail.com</a></p>
+		<p><span>p:</span><a href="tel:917-593-7439">917-593-7439</a></p>
+		<p><span>i:</span><a href="https://www.instagram.com/easinewe/">@easinewe</a></p>
 	</footer>	
 </body>
 </html>
