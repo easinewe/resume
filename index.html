@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Eamonn Fitzmaurice | Design & Development in NYC </title>
-<meta name="description" content="Resume for Eamonn Fitzmaurice.  Designer and Developer living in New York City.">
+<meta name="description" content="Custom web development and design located in NYC. Hello!">
 <!--google fonts-->
 <link href="https://fonts.googleapis.com/css2?family=Monda&family=Roboto:wght@900&display=swap" rel="stylesheet">
 
@@ -16,6 +16,17 @@
 		font-size: 10px;
 		margin-left: 25vw;
 		margin-right: 5vw;
+	}
+	body,
+	a:link{
+		transition: color 0.25s linear;
+	}
+	body.dark,
+	body.dark a{
+		color:rgba(41,35,35,0.85);
+	}
+	body.dark a:hover{
+		color: white !important;
 	}
 	h1, h2, h3, h4, h5{
 		font-family: 'Roboto', sans-serif;
@@ -31,6 +42,14 @@
 	h3{
 		font-size: 2.5em;
 		margin-top: 0.1em;
+	}
+	p,
+	p.copyright{
+		font-size: 1.75em;
+		max-width: 700px;
+	}
+	p.copyright{
+		margin-top: 7.5em;
 	}
 	ul, li{
 		list-style-type: none;
@@ -67,6 +86,9 @@
 		color: white;
 		text-decoration: none;
 	}
+	p a:link{
+		text-decoration: none;
+	}
 	a:hover,
 	span{
 		color: #df4f39;
@@ -79,10 +101,83 @@
 		column-count: 3;
 		column-gap: 2em;
 	}
+	#work{
+		z-index: 2;
+	}
+	#work .columns{
+		-moz-column-count: 1;
+		-moz-column-gap: 2em;
+		-webkit-column-count: 1;
+		-webkit-column-gap: 2em;
+		column-count: 1;
+		column-gap: 2em;
+		    display: table;
+    width: 100%;
+	}
+	#work li{
+		margin-bottom: 0px;
+		position: relative;
+		will-change: transform; /*prevent clipping of images in columns*/
+	}
+	#work li a:link{
+		padding-bottom: 1em;
+		display: block;
+	}
+	#work li a:link:not(.no_link):hover:after{
+		content: ' ';
+		display: inline-block;
+		margin-left: 10px;
+		width: 15px;
+		height: 15px;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-image: url(images/linkout.png)
+	}
+	#work li img{
+		opacity: 0;
+		width: 66.6%;
+		left: 33.3%;
+		position: absolute;
+		transform: translate3d(0%,100vh,0);
+		transition: transform 0.5s linear, opacity 1s linear;
+		animation-fill-mode: forwards;
+		pointer-events: none;
+	}
+	#work li:hover img{
+		opacity: 1.0;
+		/*transform: translate3d(0%,-50%,0);
+		animation: rise 5s 1 reverse;*/
+	}
+	@keyframes lift_in {
+	  1% {
+	  	transform: translate3d(0%,100vh,0);
+	  }
+	  100% {
+	  	transform: translate3d(0%,-50%,0);
+	  }
+	}
+	.lift_in{
+		animation: lift_in 1s 1;
+		opacity: 1.0;
+	}
+	@keyframes lift_out {
+	  1% {
+	  	transform: translate3d(0%,-50%,0);
+	  }
+	  100% {
+	  	transform: translate3d(0%,-100vh,0);
+	  }
+	}
+	.lift_out{
+		animation: lift_out 1s 1;
+		opacity: 1.0;
+	}
+
 	footer span{
 		color: inherit;
 		margin-right: 5px;
 	}
+
 	@media only screen and (max-width: 1200px) {
 		body{
 			margin-left: 0px;
@@ -122,6 +217,7 @@
 		}
 		body{
 			padding: 2.5em;
+			margin-right: 0px;
 		}
 		h1{
 			font-size: 3rem;
@@ -131,6 +227,24 @@
 			-moz-column-count: 1;
 			-webkit-column-count: 1;
 			column-count: 1;
+		}
+		#work li a:link{
+			margin-bottom: 2em;
+		}
+		#work li img{
+			opacity: 1.0;
+			left: 0px;
+			width: 100%;
+			position: relative;
+			transform: translate3d(0,0,0);
+		}
+		#tools .columns{
+			-moz-column-count: 2;
+			-moz-column-gap: 2em;
+			-webkit-column-count: 2;
+			-webkit-column-gap: 2em;
+			column-count: 2;
+			column-gap: 2em;
 		}
 		footer span{
 			display: none;
@@ -145,19 +259,26 @@
 	
 	<heading>
 		<h1>Eamonn Fitzmaurice</h1>
-		<h2>Design <span>+</span> Development</h2>
+		<h2>Design <span>/</span> Development</h2>
 	</heading>
-		
+	
+	<section class="intro">
+		<p>I am both a graphic designer and full stack developer based in NYC. These different skills have enabled me to build projects in web, print, apps and maps all the way from design to implementation.</p> 
+		<p>Please feel free to <a href="#contact">contact me</a> if you'd like to work together.</p>
+	</section>
+	
+	<div id="icon"></div>
+	
 	<section>
 		<h3>Experience</h3>
 		<ul class="columns">
-			<li>Devona Interactive
+			<li><a href="https://www.devona.com">Devona Interactive
 				Senior Designer / Developer
-				2015–2020
+				2015–2020</a>
 			</li>	
-			<li>VanDam Maps
-				Design/Production Manager 
-				2005–2015
+			<li><a href="https://www.vandam.com">VanDam Maps
+				Design / Production Manager 
+				2005–2015</a>
 			</li>	
 			<li>Pulse of the Twin Cities
 				Art Director
@@ -169,23 +290,24 @@
 	<section id="work">
 		<h3>Work</h3>
 		<ul class="columns">
-			<li><a href="https://bakednyc.com">Baked</a></li>
-			<li><a href="https://brown65.the74million.org">Brown vs. Board</a></li>
-			<li><a href="http://educationdream.com">Education Dream</a></li>
-			<li><a href="https://www.esmailcorp.com">Esmail Corp</a></li>
-			<li><a href="https://www.glenstone.org">Glenstone</a></li>
-			<li><a href="http://www.chpcny.org/makingneighborhoodsregional/">Making Neighborhoods</a></li>
-			<li><a href="https://www.youtube.com/watch?v=oc8N_B0qc8Q">mApp4D</a></li>
-			<li><a href="https://miainsurancegroup.com">Miami Insurance Group</a></li>
-			<li><a href="https://vandam.com/our_work_detail.php?id=20">National Gallery of Art</a></li>
-			<li><a href="http://reinventingschools.the74million.org">Reinventing Americas Schools</a></li>
-			<li><a href="https://www.the74million.org">The 74 Million</a></li>
-			<li><a href="http://topsheet.com">TopSheet</a></li>
-			<li><a href="https://vandam.com">VanDam Maps</a></li>
+			<li><a data-slides="5" data-root="baked" href="https://bakednyc.com"><img src="images/baked_1.jpg">Baked</a></li>
+			<li><a data-slides="1" data-root="brownvboard" href="https://brown65.the74million.org"><img src="images/brownvboard.jpg">Brown vs. Board</a></li>
+			<li><a data-slides="5" data-root="education_dream" href="http://educationdream.com"><img src="images/education_dream_1.jpg">Education Dream</a></li>
+			<li><a data-slides="3" data-root="esmail" href="https://www.esmailcorp.com"><img src="images/esmail_1.jpg">Esmail Corp</a></li>
+			<li><a data-slides="6" data-root="glenstone" href="https://www.glenstone.org"><img src="images/glenstone_1.jpg">Glenstone</a></li>
+			<li><a data-slides="1" data-root="makingneighborhoods" href="http://www.chpcny.org/makingneighborhoodsregional/"><img src="images/makingneighborhoods.jpg">Making Neighborhoods</a></li>
+			<li><a data-slides="1" data-root="mapp4d" href="https://www.youtube.com/watch?v=oc8N_B0qc8Q"><img src="images/mapp4d.jpg">mApp4D</a></li>
+			<li><a data-slides="1" data-root="mia" href="https://miainsurancegroup.com"><img src="images/mia.jpg">Miami Insurance Group</a></li>
+			<li><a data-slides="1" data-root="nga" href="https://vandam.com/our_work_detail.php?id=20"><img src="images/nga_1.jpg">National Gallery of Art</a></li>
+			<li><a class="no_link" data-slides="1" data-root="pulse" href="#"><img src="images/pulse.jpg">Pulse of the Twin Cities</a></li>
+			<li><a data-slides="4" data-root="reinventing" href="http://reinventingschools.the74million.org"><img src="images/reinventing_1.jpg">Reinventing Americas Schools</a></li>
+			<li><a data-slides="6" data-root="seventy-four" href="https://www.the74million.org"><img src="images/seventy-four_1.jpg">The 74 Million</a></li>
+			<li><a data-slides="1" data-root="topsheet" href="http://topsheet.com"><img src="images/topsheet.jpg">TopSheet</a></li>
+			<li><a data-slides="1" data-root="vandam" href="https://vandam.com"><img src="images/vandam.jpg">VanDam Maps</a></li>
 		</ul>
 	</section>
 
-	<section>
+	<section id="tools">
 		<h3>Tools</h3>
 			<ul class="columns">
 				<li>PHP</li>
@@ -210,12 +332,112 @@
 			</ul>	
 	</section>-->
 
-	<footer>
-		<h3>Contact Me!</h3>
-		<p>I'm in New York City.</p>
-		<p><span>e:</span><a href="mailto:eamonnfitzmaurice@gmail.com">eamonnfitzmaurice@gmail.com</a></p>
-		<p><span>p:</span><a href="tel:917-593-7439">917-593-7439</a></p>
-		<p><span>i:</span><a href="https://www.instagram.com/easinewe/">@easinewe</a></p>
+	<footer id="contact">
+		<h3>Contact Me</h3>
+		<p>I'm based in <a href="#">New York City</a>.</p>
+		<p><span>::</span><a href="mailto:eamonnfitzmaurice@gmail.com">Email</a></p>
+		<!--<p><span>::</span><a href="tel:917-593-7439">917-593-7439</a></p>-->
+		<p><span>::</span><a href="https://www.instagram.com/easinewe/">Instagram</a></p>
+		<p><span>::</span><a href="https://www.linkedin.com/in/eamonn-fitzmaurice-34b70715/">LinkedIn</a></p>
+		<p class="copyright">last updated: 10/2020</p>
 	</footer>	
 </body>
 </html>
+
+<script>
+	//variables
+	var work_links 	= document.getElementById('work').getElementsByTagName('a'),
+		win 		= new Object(),
+		slideChange = '',
+		slideCount  = 1;
+
+		//add object property
+		win.x = window.innerWidth;
+	
+
+		for(var i = 0, len = work_links.length; i < len; i++) {
+   				
+
+				//set links to open in new window
+				if( work_links[i].classList.contains('no_link') ){
+					work_links[i].addEventListener("click", function(event){event.preventDefault()});
+				}else{
+					work_links[i].target = "_blank";
+				}
+
+				//preload slides
+				preLoadSlides(work_links[i]);
+			
+				//add event listeners
+				work_links[i].onmouseover = function() {
+					if(win.x > 700){
+						var image 	= this.getElementsByTagName('img')[0],
+							root 	= this.dataset.root,
+							slides 	= this.dataset.slides;
+
+						//bring in image
+						image.className = 'lift_in';
+						
+						//darken background
+						document.body.className = "dark";
+												
+						//change slides if we have more than 1
+						if(slides > 1){
+							slideChange = setInterval(changeSlide.bind(null, image, root, slides),1200);
+						}
+					}
+				}
+
+				work_links[i].onmouseout = function() {
+					if(win.x > 700){
+						var image = this.getElementsByTagName('img')[0];
+						
+						//remove image
+						image.className = 'lift_out';
+						
+						//restore body color
+						document.body.classList.remove("dark");
+						
+						//stop changing of images and reset slideCount
+						window.clearInterval(slideChange);
+						slideCount  = 1;
+						
+					}
+				}
+
+			}
+
+	
+	function preLoadSlides(link){
+		var root = link.dataset.root,
+			slides = link.dataset.slides;
+	
+		//load additional numbered images
+		if(slides > 1){
+		   	for(var i = 1, slides; i <= slides; i++) {
+				var img = new Image();
+    			img.src = 'images/'+root+'_'+i+'.jpg';
+			}
+		}
+	
+	}
+	
+	function changeSlide(image, root, slides){
+		image.src = 'images/'+root+'_'+slideCount+'.jpg';
+		
+		if(slideCount < slides ){
+			slideCount++;
+		}else{
+			slideCount = 1;
+		}
+   }
+
+	
+	
+	function windowResize(){
+		win.x = window.innerWidth;
+		console.log(win);
+	}
+	
+	window.addEventListener("resize", windowResize);
+</script>
